@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+startjenkins() {
+sudo /etc/init.d/jenkins start
+}
+
+stopjenkins() {
+sudo /etc/init.d/jenkins stop
+}
+
+restartjenkins() {
+sudo /etc/init.d/jenkins restart
+}
