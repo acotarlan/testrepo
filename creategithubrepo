@@ -1,0 +1,121 @@
+Step 1: Create a GitHub Repository
+
+    Go to GitHub.com and log in to your account.
+
+    Click the "+" icon in the top-right corner and select New repository.
+
+    Fill in the details:
+
+        Repository Name: Name your project.
+
+        Description: Optional but recommended.
+
+        Public/Private: Choose visibility.
+
+        Initialize with a README: Optional.
+
+    Click Create repository.
+
+Step 2: Open Your Xcode Project
+
+    Launch Xcode.
+
+    Open your project (or create a new one).
+
+    Make sure your project folder is properly organized and contains a .gitignore file (more on this later).
+
+Step 3: Initialize Git in Your Project
+
+    Open Terminal.
+
+    Navigate to your Xcode project directory:
+
+cd /path/to/your/project
+
+Initialize a new Git repository:
+
+git init
+
+Add all project files:
+
+git add .
+
+Commit the changes:
+
+    git commit -m "Initial commit"
+
+Step 4: Add Remote Repository
+
+Link your local repository to the GitHub remote repository:
+
+git remote add origin https://github.com/username/repository.git
+
+Replace username and repository with your actual GitHub username and repo name.
+Step 5: Push the Project to GitHub
+
+Push your initial commit to the GitHub repository:
+
+git push -u origin master
+
+If using the main branch (common with newer repositories), use:
+
+git push -u origin main
+
+Step 6: Configure Your .gitignore File (Important!)
+
+Since Xcode projects generate a lot of unnecessary files, use a .gitignore file to exclude them:
+
+    Create a .gitignore file in your project root:
+
+touch .gitignore
+
+Open it with a text editor:
+
+nano .gitignore
+
+Add the following content:
+
+    # Xcode
+    *.xcuserstate
+    *.xcworkspace
+    *.xcodeproj/project.xcworkspace
+    *.xcodeproj/xcuserdata
+    *.xcodeproj/xcuserdata/*
+    *.pbxuser
+    *.mode1v3
+    *.mode2v3
+    build/
+    DerivedData/
+    *.DS_Store
+
+    Save and exit.
+
+Commit the .gitignore:
+
+git add .gitignore
+git commit -m "Add .gitignore"
+git push
+
+Step 7: Verify Your Project on GitHub
+
+    Go to your repository URL:
+
+    https://github.com/username/repository
+
+    Check that your files are successfully uploaded.
+
+💡 Alternative: Using Xcode’s Built-In Git Support
+
+    In Xcode, go to:
+
+Source Control > New Git Repositories
+
+You will see your project being version-controlled.
+
+To push directly from Xcode:
+
+    Go to Source Control > Commit.
+
+    Select changes to commit.
+
+    Click Push to Remote to upload to GitHub.
